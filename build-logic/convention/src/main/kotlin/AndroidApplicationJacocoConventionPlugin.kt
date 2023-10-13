@@ -1,5 +1,5 @@
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.rodrigoguerrero.buildlogic.convention.configureJacoco
+import com.thermondo.buildlogic.convention.configureJacoco
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType

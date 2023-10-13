@@ -1,5 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
-import com.rodrigoguerrero.buildlogic.convention.configureAndroidCompose
+import com.thermondo.buildlogic.convention.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
@@ -10,7 +10,6 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
         with (target) {
             with(pluginManager) {
                 apply("com.android.application")
-                apply("io.gitlab.arturbosch.detekt")
             }
 
             val extension = extensions.getByType<ApplicationExtension>()

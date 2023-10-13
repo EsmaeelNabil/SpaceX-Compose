@@ -1,33 +1,208 @@
 [versions]
-agp = "8.1.1"
-org-jetbrains-kotlin-android = "1.9.10"
-core-ktx = "1.12.0"
-junit = "4.13.2"
-androidx-test-ext-junit = "1.1.5"
-espresso-core = "3.5.1"
-lifecycle-runtime-ktx = "2.6.2"
-activity-compose = "1.7.2"
-compose-bom = "2023.09.01"
+androidx-activity-compose-version = "1.8.0"
+androidx-arch-core-testing-version = "2.2.0"
+androidx-benchmark-macro-junit4-version = "1.1.1"
+androidx-compose-bom-version = "2023.10.00"
+androidx-compose-compiler-version = "1.5.3"
+androidx-core-ktx-version = "1.12.0"
+androidx-core-splashscreen-version = "1.0.1"
+androidx-datastore-version = "1.0.0"
+androidx-hilt-navigation-compose-version = "1.0.0"
+androidx-lifecycle-version = "2.6.2"
+androidx-navigation-compose-version = "2.7.4"
+androidx-profileinstaller-version = "1.3.1"
+androidx-room-version = "2.5.2"
+androidx-startup-runtime-version = "1.1.1"
+androidx-test-core-ktx-version = "1.5.0"
+androidx-test-espresso-core-version = "3.5.1"
+androidx-test-ext-junit-version = "1.1.5"
+androidx-work-version = "2.8.1"
+app-cash-paparazzi-gradle-plugin-version = "1.3.1"
+app-cash-turbine-version = "1.0.0"
+com-android-library = "7.4.2"
+com-android-tools-build-gradle-version = "8.1.2"
+com-android-tools-lint-version = "31.1.2"
+com-google-accompanist-version = "0.32.0"
+com-google-dagger-version = "2.48.1"
+com-google-firebase-bom-version = "32.3.1"
+com-google-protobuf-kotlin-lite-version = "3.24.4"
+com-google-protobuf-plugin-version = "0.9.4"
+com-google-protobuf-protoc-version = "21.0-rc-1"
+com-slack-lint-compose-lint-checks-version = "1.2.0"
+com-squareup-okhttp3-okhttp-version = "4.11.0"
+io-coil-kt-coil-compose-version = "2.4.0"
+io-gitlab-arturbosch-detekt-version = "1.23.1"
+io-ktor-version = "2.3.5"
+io-mockk-version = "1.13.8"
+io-strikt-core-version = "0.34.1"
+junit-version = "4.13.2"
+org-jacoco-version = "0.8.10"
+org-jetbrains-kotlin-gradle-plugin-version = "1.9.10"
+org-jetbrains-kotlin-plugin-serialization-version = "1.9.10"
+org-jetbrains-kotlinx-collections-immutable-version = "0.3.6"
+org-jetbrains-kotlinx-coroutines-test-version = "1.7.3"
+org-jetbrains-kotlinx-coroutines-version = "1.7.3"
+org-jetbrains-kotlinx-datetime-version = "0.4.1"
+org-junit-jupiter-junit-jupiter-version = "5.10.0"
+org-junit-vintage-junit-vintage-engine-version = "5.10.0"
 
 [libraries]
-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
-ui = { group = "androidx.compose.ui", name = "ui" }
-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-material3 = { group = "androidx.compose.material3", name = "material3" }
-
-[plugins]
-com-android-application = { id = "com.android.application", version.ref = "agp" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity-compose-version" }
+androidx-arch-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "androidx-arch-core-testing-version" }
+androidx-benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "androidx-benchmark-macro-junit4-version" }
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "androidx-compose-bom-version" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
+androidx-compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui" }
+androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core-ktx-version" }
+androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "androidx-datastore-version" }
+androidx-core-splash = { module = "androidx.core:core-splashscreen", version.ref = "androidx-core-splashscreen-version" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "androidx-hilt-navigation-compose-version" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle-version" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-version" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle-version" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation-compose-version" }
+androidx-profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "androidx-profileinstaller-version" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room-version" }
+androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "androidx-room-version" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room-version" }
+androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "androidx-room-version" }
+androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "androidx-startup-runtime-version" }
+androidx-test-core-ktx = { module = "androidx.test:core-ktx", version.ref = "androidx-test-core-ktx-version" }
+androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso-core-version" }
+androidx-test-ext-junit-ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "androidx-test-ext-junit-version" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "androidx-work-version" }
+androidx-work-testing = { module = "androidx.work:work-testing", version.ref = "androidx-work-version" }
+app-cash-paparazzi-gradle-plugin = { module = "app.cash.paparazzi:paparazzi-gradle-plugin", version.ref = "app-cash-paparazzi-gradle-plugin-version" }
+app-cash-turbine = { module = "app.cash.turbine:turbine", version.ref = "app-cash-turbine-version" }
+com-android-tools-build-gradle = { module = "com.android.tools.build:gradle", version.ref = "com-android-tools-build-gradle-version" }
+com-android-tools-lint = { module = "com.android.tools.lint:lint", version.ref = "com-android-tools-lint-version" }
+com-android-tools-lint-api = { module = "com.android.tools.lint:lint-api", version.ref = "com-android-tools-lint-version" }
+com-android-tools-lint-checks = { module = "com.android.tools.lint:lint-checks", version.ref = "com-android-tools-lint-version" }
+com-android-tools-lint-tests = { module = "com.android.tools.lint:lint-tests", version.ref = "com-android-tools-lint-version" }
+com-android-tools-testutils = { module = "com.android.tools:testutils", version.ref = "com-android-tools-lint-version" }
+com-google-accompanist-navigation-animation = { module = "com.google.accompanist:accompanist-navigation-animation", version.ref = "com-google-accompanist-version" }
+com-google-accompanist-navigation-material = { module = "com.google.accompanist:accompanist-navigation-material", version.ref = "com-google-accompanist-version" }
+com-google-accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "com-google-accompanist-version" }
+com-google-accompanist-placeholder = { module = "com.google.accompanist:accompanist-placeholder", version.ref = "com-google-accompanist-version" }
+com-google-accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "com-google-accompanist-version" }
+com-google-dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "com-google-dagger-version" }
+com-google-dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "com-google-dagger-version" }
+com-google-dagger-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "com-google-dagger-version" }
+com-google-firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "com-google-firebase-bom-version" }
+com-google-protobuf-kotlin-lite = { module = "com.google.protobuf:protobuf-kotlin-lite", version.ref = "com-google-protobuf-kotlin-lite-version" }
+com-google-protobuf-protoc = { module = "com.google.protobuf:protoc", version.ref = "com-google-protobuf-protoc-version" }
+com-slack-lint-compose-lint-checks = { module = "com.slack.lint.compose:compose-lint-checks", version.ref = "com-slack-lint-compose-lint-checks-version" }
+com-squareup-okhttp3-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "com-squareup-okhttp3-okhttp-version" }
+com-squareup-okhttp3-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "com-squareup-okhttp3-okhttp-version" }
+io-coil-kt-coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "io-coil-kt-coil-compose-version" }
+io-gitlab-arturbosch-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "io-gitlab-arturbosch-detekt-version" }
+io-gitlab-arturbosch-detekt-detekt-api = { module = "io.gitlab.arturbosch.detekt:detekt-api", version.ref = "io-gitlab-arturbosch-detekt-version" }
+io-gitlab-arturbosch-detekt-detekt-cli = { module = "io.gitlab.arturbosch.detekt:detekt-cli", version.ref = "io-gitlab-arturbosch-detekt-version" }
+io-gitlab-arturbosch-detekt-detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "io-gitlab-arturbosch-detekt-version" }
+io-gitlab-arturbosch-detekt-detekt-test = { module = "io.gitlab.arturbosch.detekt:detekt-test", version.ref = "io-gitlab-arturbosch-detekt-version" }
+io-ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "io-ktor-version" }
+io-ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "io-ktor-version" }
+io-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "io-ktor-version" }
+io-ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "io-ktor-version" }
+io-ktor-client-resources = { module = "io.ktor:ktor-client-resources", version.ref = "io-ktor-version" }
+io-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "io-ktor-version" }
+io-mockk = { module = "io.mockk:mockk", version.ref = "io-mockk-version" }
+io-strikt-core = { module = "io.strikt:strikt-core", version.ref = "io-strikt-core-version" }
+junit = { module = "junit:junit", version.ref = "junit-version" }
+org-jacoco-core = { module = "org.jacoco:org.jacoco.core", version.ref = "org-jacoco-version" }
+org-jetbrains-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "org-jetbrains-kotlin-gradle-plugin-version" }
+org-jetbrains-kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "org-jetbrains-kotlinx-collections-immutable-version" }
+org-jetbrains-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "org-jetbrains-kotlinx-coroutines-version" }
+org-jetbrains-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "org-jetbrains-kotlinx-coroutines-version" }
+org-jetbrains-kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "org-jetbrains-kotlinx-coroutines-test-version" }
+org-jetbrains-kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "org-jetbrains-kotlinx-datetime-version" }
+org-junit-jupiter-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "org-junit-jupiter-junit-jupiter-version" }
+org-junit-jupiter-junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "org-junit-jupiter-junit-jupiter-version" }
+org-junit-jupiter-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "org-junit-jupiter-junit-jupiter-version" }
+org-junit-vintage-junit-vintage-engine = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "org-junit-vintage-junit-vintage-engine-version" }
 
 [bundles]
+accompanist = [
+    "com-google-accompanist-systemuicontroller",
+    "com-google-accompanist-permissions",
+    "com-google-accompanist-placeholder",
+    "com-google-accompanist-navigation-animation",
+    "com-google-accompanist-navigation-material"
+]
 
+android-test = [
+    "androidx-arch-core-testing",
+    "androidx-test-core-ktx",
+    "androidx-test-espresso-core",
+    "androidx-test-ext-junit-ktx",
+]
+compose = [
+    "androidx-compose-material3",
+    "androidx.compose-ui-tooling-preview",
+    "androidx-compose-ui",
+    "androidx-lifecycle-runtime-compose",
+]
+compose-tooling = [
+    "androidx-compose-ui-tooling",
+    "androidx-compose-ui-test-manifest",
+]
+ktor = [
+    "io-ktor-client-auth",
+    "io-ktor-client-android",
+    "io-ktor-client-core",
+    "io-ktor-client-content-negotiation",
+    "io-ktor-serialization-kotlinx-json",
+    "io-ktor-client-resources"
+]
+lint = [
+    "com-android-tools-lint-api",
+    "com-android-tools-lint-checks",
+]
+lint-test = [
+    "com-android-tools-lint",
+    "com-android-tools-lint-tests",
+    "com-android-tools-testutils",
+]
+okhttp = [
+    "com-squareup-okhttp3-logging-interceptor",
+    "com-squareup-okhttp3-okhttp",
+]
+room = [
+    "androidx-room-runtime",
+    "androidx-room-paging"
+]
+test = [
+    "app-cash-turbine",
+    "io-mockk",
+    "junit",
+    "org-junit-jupiter-junit-jupiter",
+    "org-junit-jupiter-junit-jupiter-api",
+    "io-strikt-core"
+]
+work-manager = [
+    "androidx-work-runtime-ktx",
+    "androidx-work-testing"
+]
+
+[plugins]
+com-google-protobuf-plugin = { id = "com.google.protobuf", version.ref = "com-google-protobuf-plugin-version" }
+io-gitlab-arturbosch-detekt-plugin = { id = "io.gitlab.arturbosch.detekt", version.ref = "io-gitlab-arturbosch-detekt-version" }
+org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "org-jetbrains-kotlin-plugin-serialization-version" }
+
+# Plugins defined by this project
+thermondo-android-application = { id = "thermondo.android.application", version = "unspecified" }
+thermondo-android-application-compose = { id = "thermondo.android.compose.application", version = "unspecified" }
+thermondo-android-feature = { id = "thermondo.android.feature", version = "unspecified" }
+thermondo-android-application-jacoco = { id = "thermondo.android.jacoco.application", version = "unspecified" }
+thermondo-android-library = { id = "thermondo.android.library", version = "unspecified" }
+thermondo-android-library-compose = { id = "thermondo.android.library.compose", version = "unspecified" }
+thermondo-android-library-test = { id = "thermondo.android.library.test", version = "unspecified" }
+thermondo-android-library-jacoco = { id = "thermondo.android.jacoco.library", version = "unspecified" }
+thermondo-android-hilt = { id = "thermondo.android.hilt", version = "unspecified" }
+thermondo-kotlin-library = { id = "thermondo.kotlin.library", version = "unspecified" }
+thermondo-kotlin-library-test = { id = "thermondo.kotlin.library.test", version = "unspecified" }
+thermondo-android-room = { id = "thermondo.android.room.library", version = "unspecified" }

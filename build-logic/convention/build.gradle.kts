@@ -2,7 +2,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.rodrigoguerrero.buildconvention"
+group = "com.thermondo.buildconvention"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -18,51 +18,51 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplication") {
-            id = "my.android.application"
+            id = "thermondo.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidComposeApplication") {
-            id = "my.android.compose.application"
+            id = "thermondo.android.compose.application"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = "my.android.library"
+            id = "thermondo.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("androidLibraryCompose") {
-            id = "my.android.library.compose"
+            id = "thermondo.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidTestLibrary") {
-            id = "my.android.library.test"
+            id = "thermondo.android.library.test"
             implementationClass = "AndroidLibraryTestConventionPlugin"
         }
         register("androidFeature") {
-            id = "my.android.feature"
+            id = "thermondo.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
         register("androidHilt") {
-            id = "my.android.hilt"
+            id = "thermondo.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
         }
         register("kotlinLibrary") {
-            id = "my.kotlin.library"
+            id = "thermondo.kotlin.library"
             implementationClass = "KotlinLibraryConventionPlugin"
         }
         register("kotlinTestLibrary") {
-            id = "my.kotlin.library.test"
+            id = "thermondo.kotlin.library.test"
             implementationClass = "KotlinLibraryTestConventionPlugin"
         }
         register("androidRoomLibrary") {
-            id = "my.android.room.library"
+            id = "thermondo.android.room.library"
             implementationClass = "AndroidRoomLibraryConventionPlugin"
         }
         register("androidJacocoApplication") {
-            id = "my.android.jacoco.application"
+            id = "thermondo.android.jacoco.application"
             implementationClass = "AndroidApplicationJacocoConventionPlugin"
         }
         register("androidJacocoLibrary") {
-            id = "my.android.jacoco.library"
+            id = "thermondo.android.jacoco.library"
             implementationClass = "AndroidLibraryJacocoConventionPlugin"
         }
     }

@@ -1,4 +1,4 @@
-import com.rodrigoguerrero.buildlogic.convention.configureKotlinJvm
+import com.thermondo.buildlogic.convention.configureKotlinJvm
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
