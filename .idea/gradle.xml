@@ -23,13 +23,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/analysis" />
-            <option value="$PROJECT_DIR$/analysis/lint-custom-rules" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/build-logic" />
             <option value="$PROJECT_DIR$/build-logic/convention" />
-            <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/core/designsystem" />
           </set>
         </option>
       </GradleProjectSettings>
