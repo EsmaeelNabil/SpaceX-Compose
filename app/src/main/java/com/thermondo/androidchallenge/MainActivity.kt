@@ -12,7 +12,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ThermondoTheme {
-                ThermondoButton(onClick = {  }) {
+                ThermondoButton(onClick = { }) {
                     Text(text = "Design system")
                 }
             }

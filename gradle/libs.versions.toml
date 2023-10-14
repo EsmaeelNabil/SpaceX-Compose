@@ -43,6 +43,7 @@ org-jetbrains-kotlinx-collections-immutable-version = "0.3.6"
 org-jetbrains-kotlinx-coroutines-test-version = "1.7.3"
 org-jetbrains-kotlinx-coroutines-version = "1.7.3"
 org-jetbrains-kotlinx-datetime-version = "0.4.1"
+org-jetbrains-kotlinx-serialization-json-version = "1.6.0"
 org-junit-jupiter-junit-jupiter-version = "5.10.0"
 org-junit-vintage-junit-vintage-engine-version = "5.10.0"
 
@@ -120,6 +121,7 @@ org-jetbrains-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kot
 org-jetbrains-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "org-jetbrains-kotlinx-coroutines-version" }
 org-jetbrains-kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "org-jetbrains-kotlinx-coroutines-test-version" }
 org-jetbrains-kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "org-jetbrains-kotlinx-datetime-version" }
+org-jetbrains-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "org-jetbrains-kotlinx-serialization-json-version" }
 org-junit-jupiter-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "org-junit-jupiter-junit-jupiter-version" }
 org-junit-jupiter-junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "org-junit-jupiter-junit-jupiter-version" }
 org-junit-jupiter-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "org-junit-jupiter-junit-jupiter-version" }
