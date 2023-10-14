@@ -7,6 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.thermondo.designsystem.icons.ThermondoIcons
+import com.thermondo.designsystem.theme.AppTheme
+import com.thermondo.designsystem.theme.LocalAppShapes
+import com.thermondo.designsystem.theme.Shapes
 import com.thermondo.designsystem.theme.ThermondoTheme
 
 /**
@@ -32,6 +35,7 @@ fun ThermondoButton(
         onClick = onClick,
         modifier = modifier,
         enabled = enabled,
+        shape = AppTheme.shapes.small,
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.onBackground,
         ),
