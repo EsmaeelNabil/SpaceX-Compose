@@ -41,3 +41,6 @@ local.properties
 # Android Studio captures folder
 captures/
 .idea/gradle.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
+.idea/gradle.xml

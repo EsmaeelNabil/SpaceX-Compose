@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidCodingChallenge"
 include(":app")
+include(":core:designsystem")

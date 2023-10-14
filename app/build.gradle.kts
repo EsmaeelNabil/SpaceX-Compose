@@ -26,3 +26,7 @@ android {
         }
     }
 }
+
+dependencies {
+    implementation(project(":core:designsystem"))
+}
