@@ -70,6 +70,7 @@ androidx-navigation-compose = { module = "androidx.navigation:navigation-compose
 androidx-profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "androidx-profileinstaller-version" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room-version" }
 androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "androidx-room-version" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx-room-version" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room-version" }
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "androidx-room-version" }
 androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "androidx-startup-runtime-version" }
@@ -178,7 +179,8 @@ okhttp = [
 ]
 room = [
     "androidx-room-runtime",
-    "androidx-room-paging"
+    "androidx-room-paging",
+    "androidx-room-ktx"
 ]
 test = [
     "app-cash-turbine",

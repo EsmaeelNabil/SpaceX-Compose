@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.thermondo.android.library)
     alias(libs.plugins.thermondo.android.library.jacoco)
     alias(libs.plugins.thermondo.android.hilt)
+    alias(libs.plugins.org.jetbrains.kotlin.plugin.serialization)
     alias(libs.plugins.thermondo.android.room)
 }
 
@@ -17,4 +18,5 @@ dependencies {
     implementation(project(":core:model"))
     implementation(libs.org.jetbrains.kotlinx.coroutines.android)
     implementation(libs.org.jetbrains.kotlinx.datetime)
+    implementation(libs.org.jetbrains.kotlinx.serialization.json)
 }
