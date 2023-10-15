@@ -46,6 +46,7 @@ org-jetbrains-kotlinx-datetime-version = "0.4.1"
 org-jetbrains-kotlinx-serialization-json-version = "1.6.0"
 org-junit-jupiter-junit-jupiter-version = "5.10.0"
 org-junit-vintage-junit-vintage-engine-version = "5.10.0"
+gradleSecretsPluginVersion="2.0.1"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity-compose-version" }
@@ -107,10 +108,11 @@ io-gitlab-arturbosch-detekt-detekt-formatting = { module = "io.gitlab.arturbosch
 io-gitlab-arturbosch-detekt-detekt-test = { module = "io.gitlab.arturbosch.detekt:detekt-test", version.ref = "io-gitlab-arturbosch-detekt-version" }
 io-ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "io-ktor-version" }
 io-ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "io-ktor-version" }
+io-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "io-ktor-version" }
 io-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "io-ktor-version" }
+io-ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "io-ktor-version" }
 io-ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "io-ktor-version" }
 io-ktor-client-resources = { module = "io.ktor:ktor-client-resources", version.ref = "io-ktor-version" }
-io-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "io-ktor-version" }
 io-mockk = { module = "io.mockk:mockk", version.ref = "io-mockk-version" }
 io-strikt-core = { module = "io.strikt:strikt-core", version.ref = "io-strikt-core-version" }
 junit = { module = "junit:junit", version.ref = "junit-version" }
@@ -155,6 +157,7 @@ compose-tooling = [
 ktor = [
     "io-ktor-client-auth",
     "io-ktor-client-android",
+    "io-ktor-client-logging",
     "io-ktor-client-core",
     "io-ktor-client-content-negotiation",
     "io-ktor-serialization-kotlinx-json",
@@ -194,6 +197,7 @@ work-manager = [
 com-google-protobuf-plugin = { id = "com.google.protobuf", version.ref = "com-google-protobuf-plugin-version" }
 io-gitlab-arturbosch-detekt-plugin = { id = "io.gitlab.arturbosch.detekt", version.ref = "io-gitlab-arturbosch-detekt-version" }
 org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "org-jetbrains-kotlin-plugin-serialization-version" }
+gradleSecretsPlugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "gradleSecretsPluginVersion" }
 
 # Plugins defined by this project
 thermondo-android-application = { id = "thermondo.android.application", version = "unspecified" }
