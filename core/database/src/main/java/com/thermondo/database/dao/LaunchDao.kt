@@ -1,9 +1,6 @@
 package com.thermondo.database.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.thermondo.database.model.LaunchEntity
 import kotlinx.coroutines.flow.Flow
 
@@ -36,6 +33,6 @@ interface LaunchDao {
     /**
      * Inserts [launchEntities] into the db if they don't exist, and replace those that do
      */
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertOrIgnoreLaunches(launchEntities: List<LaunchEntity>): List<Long>
+    @Upsert
+    fun upsertLaunches(launchEntities: List<LaunchEntity>): List<Long>
 }

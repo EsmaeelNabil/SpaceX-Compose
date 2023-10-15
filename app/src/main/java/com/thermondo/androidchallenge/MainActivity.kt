@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
                     LaunchedEffect(Unit) {
                         val listt = spacexNetworkDataSource.getLaunches()
                         withContext(Dispatchers.IO){
-                            launchesDao.insertOrIgnoreLaunches(listt.map {
+                            launchesDao.upsertLaunches(listt.map {
                                 it.asEntity()
                             })
                         }

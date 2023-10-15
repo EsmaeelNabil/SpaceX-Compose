@@ -8,9 +8,15 @@ plugins {
 }
 
 android {
-    namespace = "com.thermondo.databse"
+    namespace = "com.thermondo.database"
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    packaging {
+        resources {
+            excludes += "META-INF/LICENSE.md"
+        }
     }
 }
 
@@ -19,4 +25,12 @@ dependencies {
     implementation(libs.org.jetbrains.kotlinx.coroutines.android)
     implementation(libs.org.jetbrains.kotlinx.datetime)
     implementation(libs.org.jetbrains.kotlinx.serialization.json)
+
+
+    androidTestImplementation(libs.androidx.test.core.ktx)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.ext.junit.ktx)
+    androidTestImplementation(libs.app.cash.turbine)
+    androidTestImplementation(libs.org.jetbrains.kotlinx.coroutines.test)
+
 }
