@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.thermondo.android.library)
     alias(libs.plugins.thermondo.android.library.jacoco)
     alias(libs.plugins.org.jetbrains.kotlin.plugin.serialization)
-
+    alias(libs.plugins.thermondo.android.hilt)
 }
 
 android {

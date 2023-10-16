@@ -3,7 +3,7 @@ package com.thermondo.model.data
 data class Launch(
     val autoUpdate: Boolean = false,
     val capsules: List<String> = listOf(),
-    val networkCores: List<Core> = listOf(),
+    val cores: List<Core> = listOf(),
     val crew: List<Crew> = listOf(),
     val dateLocal: String = "",
     val datePrecision: String = "",

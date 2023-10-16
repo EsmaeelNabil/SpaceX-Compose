@@ -7,22 +7,15 @@ plugins {
 }
 
 android {
-    namespace = "com.thermondo.data"
+    namespace = "com.thermondo.domain"
 }
 
 dependencies {
-
-    implementation(project(":core:common"))
     implementation(project(":core:model"))
+    implementation(project(":core:common"))
+    implementation(project(":core:data"))
     implementation(project(":core:database"))
-    implementation(project(":core:network"))
-    implementation(libs.androidx.core.ktx)
     implementation(libs.org.jetbrains.kotlinx.coroutines.android)
-    implementation(libs.org.jetbrains.kotlinx.datetime)
     implementation(libs.org.jetbrains.kotlinx.serialization.json)
     implementation(libs.androidx.paging.runtime)
-
-    testImplementation(libs.androidx.test.ext.junit.ktx)
-    testImplementation(libs.org.jetbrains.kotlinx.coroutines.test)
-    testImplementation(libs.io.mockk)
 }

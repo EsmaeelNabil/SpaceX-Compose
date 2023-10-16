@@ -1,5 +1,6 @@
 package com.thermondo.database.dao
 
+import androidx.paging.PagingSource
 import androidx.room.*
 import com.thermondo.database.model.LaunchEntity
 import kotlinx.coroutines.flow.Flow
@@ -17,6 +18,9 @@ interface LaunchDao {
 
     @Query(value = "SELECT * FROM launches")
     fun getLaunchEntities(): Flow<List<LaunchEntity>>
+
+    @Query(value = "SELECT * FROM launches")
+    fun getPagedLaunchEntities(): PagingSource<Int, LaunchEntity>
 
     /**
      * fetches [launchEntities] from the db if their id is one of the given id's

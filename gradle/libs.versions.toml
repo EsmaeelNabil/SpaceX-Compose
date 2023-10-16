@@ -12,6 +12,7 @@ androidx-lifecycle-version = "2.6.2"
 androidx-navigation-compose-version = "2.7.4"
 androidx-profileinstaller-version = "1.3.1"
 androidx-room-version = "2.5.2"
+androidx-paging-version = "3.2.1"
 androidx-startup-runtime-version = "1.1.1"
 androidx-test-core-ktx-version = "1.5.0"
 androidxTestRunner = "1.5.2"
@@ -47,7 +48,7 @@ org-jetbrains-kotlinx-datetime-version = "0.4.1"
 org-jetbrains-kotlinx-serialization-json-version = "1.6.0"
 org-junit-jupiter-junit-jupiter-version = "5.10.0"
 org-junit-vintage-junit-vintage-engine-version = "5.10.0"
-gradleSecretsPluginVersion="2.0.1"
+gradleSecretsPluginVersion = "2.0.1"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity-compose-version" }
@@ -74,6 +75,8 @@ androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "an
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx-room-version" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room-version" }
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "androidx-room-version" }
+androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "androidx-paging-version" }
+androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "androidx-paging-version" }
 androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "androidx-startup-runtime-version" }
 androidx-test-core-ktx = { module = "androidx.test:core-ktx", version.ref = "androidx-test-core-ktx-version" }
 androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidxTestRunner" }
