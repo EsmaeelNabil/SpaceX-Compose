@@ -17,5 +17,14 @@ internal fun configureAndroidApplication(
                 useSupportLibrary = true
             }
         }
+
+        packaging {
+            /**
+             * (kotlinx-datetime-jvm and atomicfu-jvm)
+             * both containing a file with the same name :
+             * META-INF/versions/9/previous-compilation-data.bin.
+             */
+            resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
+        }
     }
 }

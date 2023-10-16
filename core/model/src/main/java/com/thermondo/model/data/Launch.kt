@@ -1,0 +1,31 @@
+package com.thermondo.model.data
+
+data class Launch(
+    val autoUpdate: Boolean = false,
+    val capsules: List<String> = listOf(),
+    val cores: List<Core> = listOf(),
+    val crew: List<Crew> = listOf(),
+    val dateLocal: String = "",
+    val datePrecision: String = "",
+    val dateUnix: Int = 0,
+    val dateUtc: String = "",
+    val details: String? = null,
+    val failures: List<Failure> = listOf(),
+    val fairings: Fairings? = null,
+    val flightNumber: Int = 0,
+    val id: String = "",
+    val launchLibraryId: String? = null,
+    val launchpad: String = "",
+    val links: Links = Links(),
+    val name: String = "",
+    val net: Boolean = false,
+    val payloads: List<String> = listOf(),
+    val rocket: String = "",
+    val ships: List<String> = listOf(),
+    val staticFireDateUnix: Int? = null,
+    val staticFireDateUtc: String? = null,
+    val success: Boolean? = null,
+    val tbd: Boolean = false,
+    val upcoming: Boolean = false,
+    val window: Int? = null
+)

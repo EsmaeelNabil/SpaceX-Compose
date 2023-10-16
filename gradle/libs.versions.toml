@@ -12,8 +12,10 @@ androidx-lifecycle-version = "2.6.2"
 androidx-navigation-compose-version = "2.7.4"
 androidx-profileinstaller-version = "1.3.1"
 androidx-room-version = "2.5.2"
+androidx-paging-version = "3.2.1"
 androidx-startup-runtime-version = "1.1.1"
 androidx-test-core-ktx-version = "1.5.0"
+androidxTestRunner = "1.5.2"
 androidx-test-espresso-core-version = "3.5.1"
 androidx-test-ext-junit-version = "1.1.5"
 androidx-work-version = "2.8.1"
@@ -43,8 +45,10 @@ org-jetbrains-kotlinx-collections-immutable-version = "0.3.6"
 org-jetbrains-kotlinx-coroutines-test-version = "1.7.3"
 org-jetbrains-kotlinx-coroutines-version = "1.7.3"
 org-jetbrains-kotlinx-datetime-version = "0.4.1"
+org-jetbrains-kotlinx-serialization-json-version = "1.6.0"
 org-junit-jupiter-junit-jupiter-version = "5.10.0"
 org-junit-vintage-junit-vintage-engine-version = "5.10.0"
+gradleSecretsPluginVersion = "2.0.1"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity-compose-version" }
@@ -68,10 +72,14 @@ androidx-navigation-compose = { module = "androidx.navigation:navigation-compose
 androidx-profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "androidx-profileinstaller-version" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room-version" }
 androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "androidx-room-version" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx-room-version" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room-version" }
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "androidx-room-version" }
+androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "androidx-paging-version" }
+androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "androidx-paging-version" }
 androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "androidx-startup-runtime-version" }
 androidx-test-core-ktx = { module = "androidx.test:core-ktx", version.ref = "androidx-test-core-ktx-version" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidxTestRunner" }
 androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso-core-version" }
 androidx-test-ext-junit-ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "androidx-test-ext-junit-version" }
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "androidx-work-version" }
@@ -106,10 +114,12 @@ io-gitlab-arturbosch-detekt-detekt-formatting = { module = "io.gitlab.arturbosch
 io-gitlab-arturbosch-detekt-detekt-test = { module = "io.gitlab.arturbosch.detekt:detekt-test", version.ref = "io-gitlab-arturbosch-detekt-version" }
 io-ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "io-ktor-version" }
 io-ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "io-ktor-version" }
-io-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "io-ktor-version" }
-io-ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "io-ktor-version" }
-io-ktor-client-resources = { module = "io.ktor:ktor-client-resources", version.ref = "io-ktor-version" }
 io-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "io-ktor-version" }
+io-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "io-ktor-version" }
+io-ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "io-ktor-version" }
+io-ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "io-ktor-version" }
+io-ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "io-ktor-version" }
+io-ktor-client-resources = { module = "io.ktor:ktor-client-resources", version.ref = "io-ktor-version" }
 io-mockk = { module = "io.mockk:mockk", version.ref = "io-mockk-version" }
 io-strikt-core = { module = "io.strikt:strikt-core", version.ref = "io-strikt-core-version" }
 junit = { module = "junit:junit", version.ref = "junit-version" }
@@ -120,6 +130,7 @@ org-jetbrains-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kot
 org-jetbrains-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "org-jetbrains-kotlinx-coroutines-version" }
 org-jetbrains-kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "org-jetbrains-kotlinx-coroutines-test-version" }
 org-jetbrains-kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "org-jetbrains-kotlinx-datetime-version" }
+org-jetbrains-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "org-jetbrains-kotlinx-serialization-json-version" }
 org-junit-jupiter-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "org-junit-jupiter-junit-jupiter-version" }
 org-junit-jupiter-junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "org-junit-jupiter-junit-jupiter-version" }
 org-junit-jupiter-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "org-junit-jupiter-junit-jupiter-version" }
@@ -139,6 +150,7 @@ android-test = [
     "androidx-test-core-ktx",
     "androidx-test-espresso-core",
     "androidx-test-ext-junit-ktx",
+    "androidx-test-runner"
 ]
 compose = [
     "androidx-compose-material3",
@@ -153,6 +165,7 @@ compose-tooling = [
 ktor = [
     "io-ktor-client-auth",
     "io-ktor-client-android",
+    "io-ktor-client-logging",
     "io-ktor-client-core",
     "io-ktor-client-content-negotiation",
     "io-ktor-serialization-kotlinx-json",
@@ -173,7 +186,8 @@ okhttp = [
 ]
 room = [
     "androidx-room-runtime",
-    "androidx-room-paging"
+    "androidx-room-paging",
+    "androidx-room-ktx"
 ]
 test = [
     "app-cash-turbine",
@@ -192,6 +206,7 @@ work-manager = [
 com-google-protobuf-plugin = { id = "com.google.protobuf", version.ref = "com-google-protobuf-plugin-version" }
 io-gitlab-arturbosch-detekt-plugin = { id = "io.gitlab.arturbosch.detekt", version.ref = "io-gitlab-arturbosch-detekt-version" }
 org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "org-jetbrains-kotlin-plugin-serialization-version" }
+gradleSecretsPlugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "gradleSecretsPluginVersion" }
 
 # Plugins defined by this project
 thermondo-android-application = { id = "thermondo.android.application", version = "unspecified" }
