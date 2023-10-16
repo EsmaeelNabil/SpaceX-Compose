@@ -7,10 +7,10 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class NetworkLinks(
     val article: String? = null,
-    val networkFlickr: NetworkFlickr = NetworkFlickr(),
-    val networkPatch: NetworkPatch = NetworkPatch(),
+    val flickr: NetworkFlickr = NetworkFlickr(),
+    val patch: NetworkPatch = NetworkPatch(),
     val presskit: String? = null,
-    val networkReddit: NetworkReddit = NetworkReddit(),
+    val reddit: NetworkReddit = NetworkReddit(),
     val webcast: String? = null,
     val wikipedia: String? = null,
     @SerialName("youtube_id")

@@ -37,10 +37,10 @@ fun NetworkReddit.asEntity() = RedditEntity(
 
 fun NetworkLinks.asEntity() = LinksEntity(
     article = article,
-    flickr = networkFlickr.asEntity(),
-    patch = networkPatch.asEntity(),
+    flickr = flickr.asEntity(),
+    patch = patch.asEntity(),
     presskit = presskit,
-    reddit = networkReddit.asEntity(),
+    reddit = reddit.asEntity(),
     webcast = webcast,
     wikipedia = wikipedia,
     youtubeId = youtubeId

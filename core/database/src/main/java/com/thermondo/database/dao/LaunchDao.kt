@@ -19,6 +19,9 @@ interface LaunchDao {
     @Query(value = "SELECT * FROM launches")
     fun getLaunchEntities(): Flow<List<LaunchEntity>>
 
+    @Query("SELECT COUNT(*) FROM launches")
+    fun getLaunchesCount(): Flow<Int>
+
     @Query(value = "SELECT * FROM launches")
     fun getPagedLaunchEntities(): PagingSource<Int, LaunchEntity>
 

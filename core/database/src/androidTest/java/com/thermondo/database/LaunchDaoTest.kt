@@ -44,6 +44,34 @@ class LaunchDaoTest {
     }
 
     @Test
+    fun launchDao_getLaunchesCount_returns_count_with_data_in_database() = runTest {
+
+        launchDao.upsertLaunches(fakeInMemoryLaunches)
+
+        val savedLaunch = launchDao.getLaunchesCount().first()
+        val expectedId = fakeInMemoryLaunches.size
+
+        assertEquals(
+            expectedId,
+            savedLaunch
+        )
+    }
+
+    @Test
+    fun launchDao_getLaunchesCount_returns_zero_with_empty_database() = runTest {
+
+        launchDao.upsertLaunches(listOf())
+
+        val savedLaunch = launchDao.getLaunchesCount().first()
+        val expectedId = 0
+
+        assertEquals(
+            expectedId,
+            savedLaunch
+        )
+    }
+
+    @Test
     fun launchDao_fetches_all_launch_entities() = runTest {
 
         launchDao.upsertLaunches(fakeInMemoryLaunches)
