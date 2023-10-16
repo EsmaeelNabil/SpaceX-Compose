@@ -115,6 +115,7 @@ io-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotl
 io-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "io-ktor-version" }
 io-ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "io-ktor-version" }
 io-ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "io-ktor-version" }
+io-ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "io-ktor-version" }
 io-ktor-client-resources = { module = "io.ktor:ktor-client-resources", version.ref = "io-ktor-version" }
 io-mockk = { module = "io.mockk:mockk", version.ref = "io-mockk-version" }
 io-strikt-core = { module = "io.strikt:strikt-core", version.ref = "io-strikt-core-version" }

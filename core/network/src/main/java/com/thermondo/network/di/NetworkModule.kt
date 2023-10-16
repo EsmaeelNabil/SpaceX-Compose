@@ -1,5 +1,6 @@
 package com.thermondo.network.di
 
+import com.thermondo.common.jsonSerializer
 import com.thermondo.network.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -22,11 +23,7 @@ object NetworkModule {
     fun provideHttpClient() = HttpClient(Android) {
 
         install(ContentNegotiation) {
-            json(Json {
-                prettyPrint = true
-                isLenient = true
-                ignoreUnknownKeys = true
-            })
+            json(jsonSerializer)
         }
 
         install(Logging) {
