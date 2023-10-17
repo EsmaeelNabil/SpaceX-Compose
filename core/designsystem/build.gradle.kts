@@ -6,3 +6,8 @@ plugins {
 android {
     namespace = "com.thermondo.designsystem"
 }
+
+dependencies {
+    implementation(project(":core:model"))
+    implementation(project(":core:common"))
+}

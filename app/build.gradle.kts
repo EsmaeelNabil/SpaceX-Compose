@@ -38,5 +38,6 @@ dependencies {
 
     implementation(project(":feature:launches"))
     implementation(project(":feature:launch-details"))
+    implementation(project(":feature:bookmarks"))
 
 }

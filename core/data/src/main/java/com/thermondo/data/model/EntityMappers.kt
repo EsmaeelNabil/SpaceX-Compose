@@ -1,6 +1,8 @@
 package com.thermondo.data.model
 
-import com.thermondo.database.model.*
+import com.thermondo.database.model.bookmark.BookmarkEntity
+import com.thermondo.database.model.launch.*
+import com.thermondo.model.data.Bookmark
 import com.thermondo.network.model.*
 
 fun NetworkCore.asEntity() = CoreEntity(
@@ -76,3 +78,6 @@ fun NetworkLaunch.asEntity() = LaunchEntity(
     upcoming = upcoming,
     window = window
 )
+
+
+fun BookmarkEntity.asBookmark() = Bookmark(launchId = launchId)

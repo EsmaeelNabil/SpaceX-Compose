@@ -1,4 +1,4 @@
-package com.thermondo.database.model
+package com.thermondo.database.model.launch
 
 import androidx.room.ColumnInfo
 

@@ -76,7 +76,7 @@ class LaunchDaoTest {
 
         launchDao.upsertLaunches(fakeInMemoryLaunches)
 
-        val savedLaunch = launchDao.getLaunchEntities()
+        val savedLaunch = launchDao.getLaunchEntitiesByIds()
 
         savedLaunch.test {
             val launches = awaitItem()

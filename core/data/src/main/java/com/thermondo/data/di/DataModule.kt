@@ -1,6 +1,8 @@
 package com.thermondo.data.di
 
+import com.thermondo.data.repository.BookmarksRepository
 import com.thermondo.data.repository.LaunchesRepository
+import com.thermondo.data.repository.LocalBookmarksRepository
 import com.thermondo.data.repository.OfflineFirstLaunchesRepository
 import dagger.Binds
 import dagger.Module
@@ -15,4 +17,9 @@ interface DataModule {
     fun bindsLaunchesRepository(
         launchesRepository: OfflineFirstLaunchesRepository
     ): LaunchesRepository
+
+    @Binds
+    fun bindsBookmarksRepository(
+        launchesRepository: LocalBookmarksRepository
+    ): BookmarksRepository
 }

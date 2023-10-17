@@ -1,7 +1,9 @@
 package com.thermondo.database.util
 
 import androidx.room.TypeConverter
-import com.thermondo.database.model.*
+import com.thermondo.database.model.launch.CoreEntity
+import com.thermondo.database.model.launch.CrewEntity
+import com.thermondo.database.model.launch.FailureEntity
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
