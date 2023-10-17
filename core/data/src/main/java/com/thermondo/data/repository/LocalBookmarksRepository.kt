@@ -24,5 +24,9 @@ class LocalBookmarksRepository @Inject constructor(
         localDataSource.removeBookmark(BookmarkEntity(launchId))
     }
 
+    override suspend fun isBookmarked(launchId: String): Boolean {
+        return localDataSource.exists(launchId)
+    }
+
     override fun getAllBookmarksIds() = localDataSource.getAllBookmarkedIds()
 }

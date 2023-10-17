@@ -14,4 +14,7 @@ interface BookmarkDao {
 
     @Query("SELECT launchId FROM bookmarks")
     fun getAllBookmarkedIds(): Flow<List<String>>
+
+    @Query("SELECT COUNT(*) > 0 FROM bookmarks WHERE launchId = :launchId")
+    suspend fun exists(launchId: String): Boolean
 }

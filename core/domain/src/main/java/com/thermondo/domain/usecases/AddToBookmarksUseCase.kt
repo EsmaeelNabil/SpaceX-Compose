@@ -3,8 +3,9 @@ package com.thermondo.domain.usecases
 import com.thermondo.data.repository.BookmarksRepository
 import javax.inject.Inject
 
-class GetBookmarksUseCase @Inject constructor(
+class AddToBookmarksUseCase @Inject constructor(
     private val bookmarksRepository: BookmarksRepository
 ) {
-    operator fun invoke() = bookmarksRepository.getAllBookmarksIds()
+    suspend operator fun invoke(launchId: String) =
+        bookmarksRepository.addBookmark(launchId)
 }
