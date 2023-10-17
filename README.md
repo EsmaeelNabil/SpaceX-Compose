@@ -52,3 +52,5 @@ Have fun! that is the most important thing! Looking forward to your submission`
 | Launches   |      Error Handling & empty cache      | Boomarks | 
 |----------|:-------------:|:----------:|
 |![Screenshot 2](https://github.com/EsmaeelNabil/SpaceX-Compose/assets/28542963/aa4372df-6cd8-4dd2-8fb1-bcf247ce8434)|  ![Screenshot 1](https://github.com/EsmaeelNabil/SpaceX-Compose/assets/28542963/24f8c9b4-622e-421f-807f-92ccca1c9946) | ![ss](https://user-images.githubusercontent.com/28542963/275959964-bd14b20e-4e47-495c-8ba7-17ef25214ff1.png) |
+
+`green` is for successfull launches, `red` is for failure luanches
