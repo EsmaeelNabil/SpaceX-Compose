@@ -20,6 +20,7 @@ import coil.compose.AsyncImage
 import com.thermondo.common.toReadableDate
 import com.thermondo.designsystem.component.ThermondoBackground
 import com.thermondo.designsystem.component.ThermondoButton
+import com.thermondo.designsystem.component.TimedVisibility
 import com.thermondo.designsystem.icons.ThermondoIcons
 import com.thermondo.designsystem.theme.AppTheme
 import com.thermondo.model.data.Launch
@@ -115,6 +116,7 @@ private fun LunchesList(
     }
 }
 
+// add previews
 @Composable
 private fun LaunchItem(
     modifier: Modifier = Modifier,
@@ -181,25 +183,5 @@ private fun LaunchItem(
 
             }
         }
-    }
-}
-
-// move to a common place, maybe a ui module.
-@Composable
-fun TimedVisibility(
-    visibleDuration: Long,
-    onTimeFinish: () -> Unit,
-    content: @Composable () -> Unit
-) {
-    var isVisible by remember { mutableStateOf(true) }
-
-    LaunchedEffect(true) {
-        delay(visibleDuration)
-        isVisible = false
-        onTimeFinish()
-    }
-
-    if (isVisible) {
-        content()
     }
 }

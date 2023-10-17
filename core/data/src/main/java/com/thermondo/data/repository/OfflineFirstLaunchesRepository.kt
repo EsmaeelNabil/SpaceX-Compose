@@ -6,6 +6,7 @@ import com.thermondo.common.ThermondoException
 import com.thermondo.common.di.Dispatcher
 import com.thermondo.common.di.ThermondoDispatchers.IO
 import com.thermondo.data.model.asEntity
+import com.thermondo.data.model.asExternalModel
 import com.thermondo.database.dao.LaunchDao
 import com.thermondo.database.model.LaunchEntity
 import com.thermondo.network.SpacexNetworkDataSource
@@ -20,8 +21,14 @@ class OfflineFirstLaunchesRepository @Inject constructor(
     @Dispatcher(IO) private val dispatcher: CoroutineDispatcher
 ) : LaunchesRepository {
 
-    override suspend fun getLaunch(launchId: String): Flow<LaunchEntity> {
-        return localDataSource.getLaunchEntity(launchId)
+    override suspend fun getLaunch(launchId: String) = withContext(dispatcher) {
+        try {
+            return@withContext Result.Success(
+                localDataSource.getLaunchEntity(launchId).asExternalModel()
+            )
+        } catch (e: Exception) {
+            return@withContext Result.Error(e)
+        }
     }
 
     override fun getCachedLaunchesCount(): Flow<Int> {

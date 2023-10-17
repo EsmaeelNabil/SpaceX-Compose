@@ -14,7 +14,7 @@ interface LaunchDao {
         WHERE id = :launchId
         """
     )
-    fun getLaunchEntity(launchId: String): Flow<LaunchEntity>
+    fun getLaunchEntity(launchId: String): LaunchEntity
 
     @Query(value = "SELECT * FROM launches")
     fun getLaunchEntities(): Flow<List<LaunchEntity>>

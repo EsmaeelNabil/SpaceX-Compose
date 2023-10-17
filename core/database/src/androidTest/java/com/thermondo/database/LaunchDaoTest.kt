@@ -32,7 +32,7 @@ class LaunchDaoTest {
 
         launchDao.upsertLaunches(fakeInMemoryLaunches)
 
-        val savedLaunch = launchDao.getLaunchEntity(fakeInMemoryLaunches.first().id).first()
+        val savedLaunch = launchDao.getLaunchEntity(fakeInMemoryLaunches.first().id)
         val expectedId = fakeInMemoryLaunches.first().id
 
 

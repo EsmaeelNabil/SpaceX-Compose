@@ -37,5 +37,6 @@ dependencies {
     implementation(project(":core:database"))
 
     implementation(project(":feature:launches"))
+    implementation(project(":feature:launch-details"))
 
 }
