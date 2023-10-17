@@ -10,6 +10,7 @@ import androidx.compose.material.icons.rounded.*
 object ThermondoIcons {
     val Add = Icons.Rounded.Add
     val Video = Icons.Rounded.OndemandVideo
+    val bookmarks = Icons.Rounded.Bookmarks
     val Check = Icons.Rounded.Check
     val Close = Icons.Rounded.Close
     val MoreVert = Icons.Default.MoreVert

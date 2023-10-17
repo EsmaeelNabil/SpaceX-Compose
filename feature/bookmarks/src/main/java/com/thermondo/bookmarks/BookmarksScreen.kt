@@ -1,23 +1,21 @@
-package com.thermondo.launches
+package com.thermondo.bookmarks
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
+import coil.compose.AsyncImage
+import com.thermondo.common.toReadableDate
 import com.thermondo.designsystem.component.LaunchItem
 import com.thermondo.designsystem.component.ThermondoBackground
 import com.thermondo.designsystem.component.ThermondoButton
@@ -27,15 +25,12 @@ import com.thermondo.designsystem.theme.AppTheme
 import com.thermondo.model.data.Launch
 
 @Composable
-internal fun LaunchesScreen(
+internal fun BookmarksScreen(
     modifier: Modifier = Modifier,
-    state: LaunchesScreenState,
-    cacheSize: Int,
-    pagedLaunches: LazyPagingItems<Launch>,
+    state: BookmarksScreenState,
     onLaunchClick: (String) -> Unit = {},
-    onSyncLaunches: () -> Unit,
     resetErrorState: () -> Unit,
-    onBookmark: (Launch) -> Unit,
+    onBookmark: (Launch) -> Unit = {},
     onRemoveBookmark: (Launch) -> Unit,
 ) {
     ThermondoBackground(modifier = modifier.fillMaxSize()) {
@@ -43,33 +38,12 @@ internal fun LaunchesScreen(
         Box(Modifier.fillMaxSize()) {
 
             LunchesList(
-                pagedLaunches = pagedLaunches,
+                launches = state.launches,
                 onLaunchClick = onLaunchClick,
                 onBookmark = onBookmark,
                 onRemoveBookmark = onRemoveBookmark,
-                getIsBookmarked = { launchId -> state.bookmarkedLaunchesIds.contains(launchId) }
+                getIsBookmarked = { item -> state.bookmarkedLaunchesIds.contains(item) }
             )
-
-            if (cacheSize == 0) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = Modifier.align(Alignment.Center)
-                ) {
-                    Text(
-                        text = "Sync the Launches at least once to cache them!."
-                    )
-                    ThermondoButton(
-                        onClick = { onSyncLaunches() },
-                        text = @Composable { Text(text = "Sync Launches") },
-                        leadingIcon = @Composable {
-                            Icon(
-                                imageVector = ThermondoIcons.Search,
-                                contentDescription = null
-                            )
-                        },
-                    )
-                }
-            }
 
             if (!state.error.isNullOrEmpty()) {
                 Surface(
@@ -102,27 +76,22 @@ internal fun LaunchesScreen(
 @Composable
 private fun LunchesList(
     modifier: Modifier = Modifier,
-    pagedLaunches: LazyPagingItems<Launch>,
+    launches: List<Launch>,
     onLaunchClick: (String) -> Unit,
     onBookmark: (Launch) -> Unit,
     onRemoveBookmark: (Launch) -> Unit,
     getIsBookmarked: (String) -> Boolean,
 ) {
     LazyColumn(modifier = modifier) {
-        items(
-            count = pagedLaunches.itemCount,
-            key = pagedLaunches.itemKey { it.id },
-            contentType = pagedLaunches.itemContentType { "Launch" }
-        ) { index ->
-            pagedLaunches[index]?.let { launch ->
-                LaunchItem(
-                    launch = launch,
-                    onLaunchClick = onLaunchClick,
-                    onBookmark = onBookmark,
-                    onRemoveBookmark = onRemoveBookmark,
-                    getIsBookmarked = getIsBookmarked
-                )
-            }
+        items(launches) { launch ->
+            LaunchItem(
+                launch = launch,
+                onLaunchClick = onLaunchClick,
+                onBookmark = onBookmark,
+                onRemoveBookmark = onRemoveBookmark,
+                getIsBookmarked = getIsBookmarked
+            )
         }
     }
 }
+

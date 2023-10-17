@@ -1,6 +1,7 @@
 package com.thermondo.database.di
 
 import com.thermondo.database.ThermondoDatabase
+import com.thermondo.database.dao.BookmarkDao
 import com.thermondo.database.dao.LaunchDao
 import dagger.Module
 import dagger.Provides
@@ -14,5 +15,10 @@ object DaosModule {
     fun providesLaunchesDao(
         database: ThermondoDatabase,
     ): LaunchDao = database.launchesDao()
+
+    @Provides
+    fun providesBookmarksDao(
+        database: ThermondoDatabase,
+    ): BookmarkDao = database.bookmarksDao()
 }
 

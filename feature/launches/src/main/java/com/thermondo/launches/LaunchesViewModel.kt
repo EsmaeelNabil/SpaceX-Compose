@@ -6,9 +6,7 @@ import androidx.paging.cachedIn
 import com.thermondo.common.Result
 import com.thermondo.common.di.Dispatcher
 import com.thermondo.common.di.ThermondoDispatchers.Main
-import com.thermondo.domain.usecases.GetCachedLaunchesSizeUseCase
-import com.thermondo.domain.usecases.GetPagedLaunchesUseCase
-import com.thermondo.domain.usecases.SyncLaunchesUseCase
+import com.thermondo.domain.usecases.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -20,7 +18,10 @@ import javax.inject.Inject
 class LaunchesViewModel @Inject constructor(
     private val syncLaunchesUseCase: SyncLaunchesUseCase,
     private val getPagedLaunchesUseCase: GetPagedLaunchesUseCase,
-    private val getCachedLaunchesSizeUseCase: GetCachedLaunchesSizeUseCase,
+    getCachedLaunchesSizeUseCase: GetCachedLaunchesSizeUseCase,
+    private val addToBookmarksUseCase: AddToBookmarksUseCase,
+    private val removeBookmarkUseCase: RemoveBookmarkUseCase,
+    private val getBookmarksUseCase: GetBookmarksUseCase,
     @Dispatcher(Main) private val dispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
@@ -28,9 +29,7 @@ class LaunchesViewModel @Inject constructor(
     val state = _state.asStateFlow()
 
     val cacheSize = getCachedLaunchesSizeUseCase().stateIn(
-        viewModelScope,
-        started = SharingStarted.WhileSubscribed(),
-        0
+        viewModelScope, started = SharingStarted.WhileSubscribed(), 0
     )
 
     private val errorHandler = CoroutineExceptionHandler { _, throwable ->
@@ -41,6 +40,20 @@ class LaunchesViewModel @Inject constructor(
 
     init {
         syncLaunches()
+        getBookmarks()
+    }
+
+    /**
+     * keeps track of the bookmarked Launches, gets updated live from Room
+     */
+    private fun getBookmarks() = viewModelScope.launch(errorHandler + dispatcher) {
+        getBookmarksUseCase().collect { entities ->
+            _state.update { state ->
+                state.copy(
+                    bookmarkedLaunchesIds = entities.map { it.launchId }.toSet()
+                )
+            }
+        }
     }
 
     fun resetErrorState() = _state.update { it.copy(error = null) }
@@ -59,6 +72,14 @@ class LaunchesViewModel @Inject constructor(
             }
         }
 
+    }
+
+    fun removeBookmark(launchId: String) = viewModelScope.launch(errorHandler + dispatcher) {
+        removeBookmarkUseCase(launchId)
+    }
+
+    fun addBookmark(launchId: String) = viewModelScope.launch(errorHandler + dispatcher) {
+        addToBookmarksUseCase(launchId)
     }
 
     fun getPagedLaunches() = getPagedLaunchesUseCase().cachedIn(viewModelScope)

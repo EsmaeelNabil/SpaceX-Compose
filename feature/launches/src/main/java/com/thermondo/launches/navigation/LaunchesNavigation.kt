@@ -50,6 +50,8 @@ internal fun LaunchesRoute(
         pagedLaunches = pagedLaunches,
         onLaunchClick = onLaunchClick,
         onSyncLaunches = { viewModel.syncLaunches() },
-        resetErrorState = { viewModel.resetErrorState() }
+        resetErrorState = { viewModel.resetErrorState() },
+        onBookmark = { viewModel.addBookmark(it.id) },
+        onRemoveBookmark = { viewModel.removeBookmark(it.id) }
     )
 }

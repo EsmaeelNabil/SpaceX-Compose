@@ -7,14 +7,12 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface BookmarkDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addBookmark(bookmark: BookmarkEntity)
+    fun addBookmark(bookmark: BookmarkEntity) : Long
 
     @Delete
-    suspend fun removeBookmark(bookmark: BookmarkEntity)
+    fun removeBookmark(bookmark: BookmarkEntity) : Int
 
     @Query("SELECT launchId FROM bookmarks")
-    fun getAllBookmarkedIds(): Flow<List<String>>
+    fun getAllBookmarkedIds(): Flow<List<BookmarkEntity>>
 
-    @Query("SELECT COUNT(*) > 0 FROM bookmarks WHERE launchId = :launchId")
-    suspend fun exists(launchId: String): Boolean
 }
