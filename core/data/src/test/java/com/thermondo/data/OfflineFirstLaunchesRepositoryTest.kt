@@ -2,9 +2,6 @@ package com.thermondo.data
 
 import androidx.paging.PagingSource
 import com.thermondo.common.Result
-import com.thermondo.common.di.Dispatcher
-import com.thermondo.common.di.ThermondoDispatchers.IO
-import com.thermondo.data.model.asEntity
 import com.thermondo.data.model.asExternalModel
 import com.thermondo.data.repository.OfflineFirstLaunchesRepository
 import com.thermondo.database.dao.LaunchDao
@@ -13,18 +10,14 @@ import com.thermondo.network.SpacexNetworkDataSource
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.createTestCoroutineScope
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.*
-import org.junit.Before
 import org.junit.Test
 import java.io.IOException
-import javax.inject.Inject
-import kotlin.coroutines.suspendCoroutine
 
 class OfflineFirstLaunchesRepositoryTest {
 
@@ -38,9 +31,8 @@ class OfflineFirstLaunchesRepositoryTest {
 
     @Test
     fun getLaunch_returns_flow_of_launch_entity_when_specified_with_id() = runTest {
-        every { localDataSource.getLaunchEntity(launchId) } returns flowOf(
-            fakeInMemoryEntityLaunches.first().copy(id = launchId)
-        )
+        every { localDataSource.getLaunchEntity(launchId) } returns
+                fakeInMemoryEntityLaunches.first().copy(id = launchId)
 
         repo = OfflineFirstLaunchesRepository(
             remoteDataSource = remoteDataSource,
@@ -48,10 +40,10 @@ class OfflineFirstLaunchesRepositoryTest {
             dispatcher = testDispatcher
         )
 
-        val expectedResult = fakeInMemoryEntityLaunches.first()
-        val result = repo.getLaunch(launchId).first()
+        val expectedResult = fakeInMemoryEntityLaunches.first().asExternalModel()
+        val result = repo.getLaunch(launchId)
 
-        assertEquals(expectedResult, result)
+        assertEquals(expectedResult, (result as Result.Success).data)
     }
 
     @Test
