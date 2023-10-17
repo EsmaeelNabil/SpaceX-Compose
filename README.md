@@ -43,6 +43,7 @@ Have fun! that is the most important thing! Looking forward to your submission`
 - Adding a local DataSource instead of relying on `Room's Dao` for better refactoring in case we wanted to use something else like [SqlDelight](https://github.com/cashapp/sqldelight).
 - Adding `Unit-tests` and `integration-tests` to the `use cases` in the app.
 - Adding `Unit-tests` for the `Mapper` layers.
+- Adding more Unit-tests for the viewmodels, datasources, repositories if missing.
 - Using MVI approach for better controlling of side effects, events and intents.
 - Implementing a generic State Management plugin that can be plugged in the `ViewModels` or Using a `State Management library` like [MvRx](https://github.com/airbnb/mavericks) to make the process of handling the state easier and more maintainable and easier to test, debug and mock.
 
