@@ -8,13 +8,16 @@ import com.thermondo.common.di.ThermondoDispatchers.IO
 import com.thermondo.data.model.asEntity
 import com.thermondo.data.model.asExternalModel
 import com.thermondo.database.dao.LaunchDao
-import com.thermondo.database.model.LaunchEntity
+import com.thermondo.database.model.launch.LaunchEntity
 import com.thermondo.network.SpacexNetworkDataSource
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
 import java.io.IOException
 import javax.inject.Inject
 
+/**
+ * create an actual [localDataSource] to separate the Dao from the logic in the future
+ */
 class OfflineFirstLaunchesRepository @Inject constructor(
     private val remoteDataSource: SpacexNetworkDataSource,
     private val localDataSource: LaunchDao,
@@ -34,6 +37,8 @@ class OfflineFirstLaunchesRepository @Inject constructor(
     override fun getCachedLaunchesCount(): Flow<Int> {
         return localDataSource.getLaunchesCount()
     }
+
+    override fun getLaunchesByIds(ids: Set<String>) = localDataSource.getLaunchEntitiesByIds(ids)
 
     /**
      * for simplicity, and for that the data won't change often.

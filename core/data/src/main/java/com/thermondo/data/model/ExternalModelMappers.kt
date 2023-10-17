@@ -1,6 +1,6 @@
 package com.thermondo.data.model
 
-import com.thermondo.database.model.*
+import com.thermondo.database.model.launch.*
 import com.thermondo.model.data.*
 
 fun CoreEntity.asExternalModel() = Core(

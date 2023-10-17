@@ -1,6 +1,6 @@
 package com.thermondo.data
 
-import com.thermondo.database.model.*
+import com.thermondo.database.model.launch.*
 import com.thermondo.network.model.*
 
 val fakeInMemoryEntityLaunches = listOf(

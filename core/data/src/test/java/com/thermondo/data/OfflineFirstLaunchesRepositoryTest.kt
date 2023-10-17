@@ -5,7 +5,7 @@ import com.thermondo.common.Result
 import com.thermondo.data.model.asExternalModel
 import com.thermondo.data.repository.OfflineFirstLaunchesRepository
 import com.thermondo.database.dao.LaunchDao
-import com.thermondo.database.model.LaunchEntity
+import com.thermondo.database.model.launch.LaunchEntity
 import com.thermondo.network.SpacexNetworkDataSource
 import io.mockk.coEvery
 import io.mockk.every
