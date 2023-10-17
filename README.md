@@ -25,6 +25,7 @@ Have fun! that is the most important thing! Looking forward to your submission`
 - Used `build-logic` convention approach for easier integration and better dependency managmend and better modularazation, [more information here](https://github.com/android/nowinandroid/blob/main/build-logic/README.md).
 - Used [ `Coroutines`, `StateFlow` , `Flow`, `Ktor`, `Kotlinx.serialization` ] as I think these are a good fit for this project.
 - Used `Dagger-Hilt` for dependency injection, as it makes it easy to inject dependencies and to apply the inversion of control and dependency injection/inversion principles, also in ui testing later by replacing modules.
+- Added Github `workflows` as a safety net for running the unit tests with each pull request that is going to be merged with `main`.
 - Added `designsystem` module to have a scallable `Theme`, `Typo` ,`Paddings`,`Shapes` and base `Components`.
 - Added `common` module to hold the common utils, classes and extensions for less duplications.
 - Added `data` module to hold the Repositories and communicate with `network` and `databse` modules for more separation of concerns.
@@ -43,7 +44,7 @@ Have fun! that is the most important thing! Looking forward to your submission`
 - Adding a local DataSource instead of relying on `Room's Dao` for better refactoring in case we wanted to use something else like [SqlDelight](https://github.com/cashapp/sqldelight).
 - Adding `Unit-tests` and `integration-tests` to the `use cases` in the app.
 - Adding `Unit-tests` for the `Mapper` layers.
-- Adding more Unit-tests for the viewmodels, datasources, repositories if missing.
+- Adding and updating more Unit-tests for the viewmodels, datasources, repositories if missing.
 - Using MVI approach for better controlling of side effects, events and intents.
 - Implementing a generic State Management plugin that can be plugged in the `ViewModels` or Using a `State Management library` like [MvRx](https://github.com/airbnb/mavericks) to make the process of handling the state easier and more maintainable and easier to test, debug and mock.
 
