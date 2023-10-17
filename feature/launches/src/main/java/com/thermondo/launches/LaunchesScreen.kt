@@ -17,6 +17,7 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
 import coil.compose.AsyncImage
+import com.thermondo.common.toReadableDate
 import com.thermondo.designsystem.component.ThermondoBackground
 import com.thermondo.designsystem.component.ThermondoButton
 import com.thermondo.designsystem.icons.ThermondoIcons
@@ -162,13 +163,10 @@ private fun LaunchItem(
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
-                    Spacer(
-                        modifier = modifier.width(AppTheme.padding.s)
-                    )
                 }
 
                 Text(
-                    text = launch.dateLocal,
+                    text = launch.dateLocal.toReadableDate(),
                     style = MaterialTheme.typography.bodySmall,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
