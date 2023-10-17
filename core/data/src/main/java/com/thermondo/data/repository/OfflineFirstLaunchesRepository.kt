@@ -40,7 +40,7 @@ class OfflineFirstLaunchesRepository @Inject constructor(
         } catch (io: IOException) {
             return@withContext Result.Error(io)
         } catch (cancellation: CancellationException) {
-            return@withContext Result.Error(ThermondoException(throwable = cancellation))
+            return@withContext Result.Error(ThermondoException())
         }
     }
 
