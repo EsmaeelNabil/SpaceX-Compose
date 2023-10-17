@@ -16,13 +16,6 @@ import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-data class LaunchesScreenState(
-    val cachedCount: Int = 0,
-    val error: String? = null,
-    val isLoading: Boolean = false,
-    val isRefreshPagingRequired: Boolean = false
-)
-
 @HiltViewModel
 class LaunchesViewModel @Inject constructor(
     private val syncLaunchesUseCase: SyncLaunchesUseCase,
