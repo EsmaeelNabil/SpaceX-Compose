@@ -19,7 +19,7 @@ Have fun! that is the most important thing! Looking forward to your submission`
   
 ## Decisions made while working on the challenge
 
-- I decided to use the MVVM + clean architecture approach for structuring the codebase in a way that is easy to understand, navigate through, scalability and re-usability.
+- I decided to use the MVVM + clean architecture approach for structuring the codebase in a way that is easy to understand, navigate through, scale and re-usability.
 - Used `Mockk` for mocks and `Turbin` for testing Kotlin Flows as it makes the process quick and easy.
 - Decided to implement the app as an `offline first` app, as the launches won't change over time, but new ones will be added.
 - Used `build-logic` convention approach for easier integration and better dependency managmend and better modularazation, [more information here](https://github.com/android/nowinandroid/blob/main/build-logic/README.md).
