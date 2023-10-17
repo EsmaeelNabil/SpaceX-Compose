@@ -22,7 +22,7 @@ interface LaunchDao {
     @Query("SELECT COUNT(*) FROM launches")
     fun getLaunchesCount(): Flow<Int>
 
-    @Query(value = "SELECT * FROM launches")
+    @Query(value = "SELECT * FROM launches ORDER BY dateUtc DESC")
     fun getPagedLaunchEntities(): PagingSource<Int, LaunchEntity>
 
     /**

@@ -12,4 +12,5 @@ android {
 
 dependencies {
     implementation(libs.org.jetbrains.kotlinx.serialization.json)
+    implementation(libs.org.jetbrains.kotlinx.datetime)
 }
